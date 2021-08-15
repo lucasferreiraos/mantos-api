@@ -9,9 +9,9 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
     openapi.Info(
-        title='Mantos API',
+        title='Mantos Store API',
         default_version='v1',
-        description='Só por uma noite',
+        description='Só manto de qualidade',
         contact=openapi.Contact(email='lucasferreiraek@gmail.com'),
         license=openapi.License(name='BSD License')
     ),
@@ -21,6 +21,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('auth/', include('authentication.endpoints', namespace='auth')),
     path('product/', include('product.endpoints', namespace='product')),
     re_path(
         r'swagger(?P<format>\.json|\.yaml)$',
