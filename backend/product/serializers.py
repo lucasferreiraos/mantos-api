@@ -12,7 +12,7 @@ class ImageSerializer(serializers.ModelSerializer):
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    images = serializers.ImageField(many=True)
+    images = serializers.ImageField()
 
     class Meta:
         model = Product
